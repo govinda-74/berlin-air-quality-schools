@@ -1,0 +1,15 @@
+# Ignore large data files
+data/
+*.geojson
+*.csv
+*.gml
+*.html
+
+# Ignore cache and environments
+__pycache__/
+*.ipynb_checkpoints/
+*.log
+*.tmp
+
+# VS Code files
+.vscode/
