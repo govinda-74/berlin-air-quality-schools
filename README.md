@@ -57,13 +57,14 @@ This stage focuses on acquiring authoritative source data required for the analy
   Script: scripts/02_data_cleaning/filter_active_stations.py
   
   * Loads raw station metadata collected from the BLUME API
-  
+
   * Filters out inactive stations and stations with invalid coordinates
+   
    Outputs:
 
-   data/raw/stations/blume_stations_active.csv
+       - data/raw/stations/blume_stations_active.csv
 
-   data/raw/stations/blume_stations_active.geojson
+       - data/raw/stations/blume_stations_active.geojson
 
     [blume_stations_active.csv](data/raw/stations/blume_stations_active.csv)
 
