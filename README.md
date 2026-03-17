@@ -65,8 +65,7 @@ This stage focuses on acquiring authoritative source data required for the analy
        - data/raw/stations/blume_stations_active.csv
 
        - data/raw/stations/blume_stations_active.geojson
-
-    [blume_stations_active.csv](data/raw/stations/blume_stations_active.csv)
+[blume_stations_active.csv](data/raw/stations/blume_stations_active.csv)
 
   ## 2. Merging and Cleaning Air Quality Measurements
    Script: scripts/02_data_cleaning/merging_station.py
