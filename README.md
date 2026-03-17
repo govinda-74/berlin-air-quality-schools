@@ -172,7 +172,7 @@ This stage focuses on acquiring authoritative source data required for the analy
     
     - data/derived/stations_school_1000m_map.html
     → Interactive map with 1 km buffers
-[stations_school_1000m_map.html](data/derived/stations_school_1000m_map.html)  
+[stations_school_1000m_map.html](https://github.com/govinda-74/berlin-air-quality-schools/blob/main/data/derived/stations_school_1000m_map.html)  
   
   - Purpose
    - Why This Is Important
