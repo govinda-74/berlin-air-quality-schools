@@ -1,3 +1,17 @@
+# Data Sources
+1) **Berlin School Locations — “Schulen Berlin” (ESRI DE content)**  
+   - Portal: <https://opendata-esridech.hub.arcgis.com/maps/esri-de-content::schulen-berlin-1/about>  
+
+2) **Air-Quality Monitoring Stations — BLUME (berlin.de)**  
+   - Stations list API: <https://luftdaten.berlin.de/api/stations>  
+
+3) **Air-Quality Time Series (1-year daily)** — BLUME CSV export (berlin.de)  
+   - Portal: <https://luftdaten.berlin.de/>  
+   - Method: CSV export per pollutant with `timespan=custom`, `start[date]/start[hour]`, `end[date]/end[hour]`, `period=24h`  
+   - Example pattern (NO₂ daily):
+     ```
+     https://luftdaten.berlin.de/core/no2.csv?timespan=custom&
+       start[date]=2024-12-01&start[hour]=00&
 
 # Data Sources and collection
 ## 01_data_collection
@@ -43,10 +57,15 @@ This stage focuses on acquiring authoritative source data required for the analy
   Script: scripts/02_data_cleaning/filter_active_stations.py
   
   * Loads raw station metadata collected from the BLUME API
+  
   * Filters out inactive stations and stations with invalid coordinates
    Outputs:
+
    data/raw/stations/blume_stations_active.csv
+
    data/raw/stations/blume_stations_active.geojson
+
+    [blume_stations_active.csv](data/raw/stations/blume_stations_active.csv)
 
   ## 2. Merging and Cleaning Air Quality Measurements
    Script: scripts/02_data_cleaning/merging_station.py
@@ -351,7 +370,7 @@ Interpretation
 
 ## Monitoring Adequacy & Health Risk Assessment
 
- - Objective
+ Objective
 
    - This analysis evaluates whether Berlin schools that are exposed to elevated air pollution levels are also adequately covered by nearby monitoring stations.
    
@@ -363,7 +382,7 @@ Interpretation
 
    - School-level exposure context
 
-Methodology
+  Methodology
 
  - For each pollutant (NO₂, PM10, PM2.5):
 
@@ -383,7 +402,7 @@ Methodology
 
     - Whether the nearest station exceeded WHO limits
   
-Outputs
+ Outputs
 
   - The script generates:
 
@@ -395,7 +414,7 @@ Outputs
 
    - Monitoring adequacy classification results
 
-Interpretation Scope
+ Interpretation Scope
 
    - Results represent a distance-based monitoring adequacy assessment, not direct on-site pollution measurements at schools.
 
@@ -406,3 +425,96 @@ Interpretation Scope
    - Nearest-station proxy
 
    - WHO 2021 annual guidelines  
+
+## monitoring_adequacy_primary_secondary
+
+Evaluates monitoring coverage and pollution risk separately for Primary and Secondary schools in Berlin using NO₂, PM10, and PM2.5.
+
+ Method:
+
+ - Classify schools → Primary (Grundschule), Secondary (Gymnasium, ISS, Privatschule)
+
+ - Compute nearest station distance
+
+ - Use latest yearly pollution data
+
+ - Compare with WHO limits
+
+ - Apply 1 km threshold to classify schools into:
+
+   - Covered & Safe
+
+   - Covered but High Risk
+
+   - Under-monitored but Low Risk
+
+   - Under-monitored & High Risk
+
+ Outputs:
+   - Tables:
+
+     - rq4_monitoring_summary_primary_<year>.csv
+
+     - rq4_monitoring_summary_secondary_<year>.csv
+
+   - Figures:
+
+     - RQ4_monitoring_adequacy_panel_primary_<year>.png
+
+     - RQ4_monitoring_adequacy_panel_secondary_<year>.png
+ 
+## rq5_school_category_exposure.py
+  Analyzes how different school categories (Primary, Secondary, Vocational, Special/Other) are exposed to air pollution (NO₂, PM10, PM2.5) within a 1 km buffer of monitoring stations.
+
+  
+ Method
+
+   - Classify schools using schulart
+
+   - Create 1 km buffers around stations
+
+   - Identify schools within buffers (spatial join)
+
+   - Merge with latest yearly pollution data
+
+   - Compare with WHO limits and flag exceedance
+
+   - Aggregate exposure by school category and pollutant
+
+ Outputs
+
+   - Table:
+
+     - school_category_pollution_exposure.csv
+
+   - Figure:
+
+     - school_category_exposure_panel_<year>.png
+
+## seasonal_school_exposure_comparison.py
+  Compares winter vs summer pollution and exposure for schools near monitoring stations, including NO₂, PM10, PM2.5, and O₃.
+
+ Method
+   - Use daily pollution data (pollution_clean_long.csv)
+
+   - Define seasons: Winter (Dec–Feb), Summer (Jun–Aug)
+
+   - Keep only complete seasons (3 months)
+
+   - Compute seasonal mean per station
+
+   - Merge with school counts (1 km buffer)
+
+   - Calculate Exposure Burden = pollution × school_count
+
+ Outputs
+
+   - Table:
+
+     - seasonal_school_exposure_summary_with_o3.csv
+
+   Figures:
+
+     - seasonal_pollution_comparison_panel_with_o3.png
+
+     - seasonal_exposure_burden_comparison_panel_with_o3.png
