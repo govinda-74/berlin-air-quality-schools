@@ -110,6 +110,8 @@ This stage focuses on acquiring authoritative source data required for the analy
 
   * Output: `data_clean/station_yearly_pollution.csv` (yearly mean pollution values per station)
 
+  [station_yearly_pollution.csv](data_clean/station_yearly_pollution.csv)
+
   * Purpose: This script aggregates daily air-pollution measurements into yearly average values for each monitoring station and pollutant.
 
   * Method:
@@ -159,15 +161,18 @@ This stage focuses on acquiring authoritative source data required for the analy
 
     - data/derived/stations_school_1000m_counts.csv
     → School count per station
-
+[stations_school_1000m_counts.csv](data/derived/stations_school_1000m_counts.csv)
+   
     - data/derived/stations_school_1000m.geojson
     → Station geometries with school counts
 
     - data/derived/schools_per_station_1000m.png
     → Bar chart of schools per station
-
+[schools_per_station_1000m.png](data/derived/schools_per_station_1000m.png)
+    
     - data/derived/stations_school_1000m_map.html
     → Interactive map with 1 km buffers
+[stations_school_1000m_map.html](data/derived/stations_school_1000m_map.html)  
   
   - Purpose
    - Why This Is Important
