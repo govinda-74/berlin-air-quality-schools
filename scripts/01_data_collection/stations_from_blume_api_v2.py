@@ -5,13 +5,17 @@ import geopandas as gpd
 from shapely.geometry import Point
 from pathlib import Path
 
-OUT = Path("data")
+ROOT = Path(__file__).resolve().parents[2]   # BERLIN/
+OUT = ROOT / "data" / "raw" / "stations"
 OUT.mkdir(parents=True, exist_ok=True)
 
+# API CONFIG
 URL = "https://luftdaten.berlin.de/api/stations"
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0"}
 
 print("Fetching BLUME stations from API…")
+
+# FETCH DATA
 r = requests.get(URL, headers=HEADERS, timeout=60)
 r.raise_for_status()
 data = r.json()

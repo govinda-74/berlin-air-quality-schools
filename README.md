@@ -1,106 +1,408 @@
-## Data Sources
-1) **Berlin School Locations — “Schulen Berlin” (ESRI DE content)**  
-   - Portal: <https://opendata-esridech.hub.arcgis.com/maps/esri-de-content::schulen-berlin-1/about>  
-   - File used: `data/berlin_schools_clean.geojson` (cleaned from source download)  
-   - CRS: WGS84 (EPSG:4326) → reprojected to **ETRS89 / UTM 33N (EPSG:25833)** for distance/buffers  
-   - Accessed: 2025-12-17
 
-2) **Air-Quality Monitoring Stations — BLUME (berlin.de)**  
-   - Stations list API: <https://luftdaten.berlin.de/api/stations>  
-   - Script: `stations_from_blume_api_v2.py` → outputs `data/blume_stations.{csv,geojson}`  
-   - Filter: `filter_active_stations.py` → `data/blume_stations_active.{csv,geojson}`  
-   - CRS: WGS84 → EPSG:25833 for spatial ops  
-   - Accessed: 2025-12-17
+# Data Sources and collection
+## 01_data_collection
 
-3) **Air-Quality Time Series (1-year daily)** — BLUME CSV export (berlin.de)  
-   - Portal: <https://luftdaten.berlin.de/>  
-   - Method: CSV export per pollutant with `timespan=custom`, `start[date]/start[hour]`, `end[date]/end[hour]`, `period=24h`  
-   - Example pattern (NO₂ daily):
-     ```
-     https://luftdaten.berlin.de/core/no2.csv?timespan=custom&
-       start[date]=2024-12-01&start[hour]=00&
-       end[date]=2025-11-30&end[hour]=23&
-       period=24h&stationgroup=all
-     ```
+This stage focuses on acquiring authoritative source data required for the analysis, without modifying.
 
-1. Core Research Question (Main Objective)
+ 1. Air Quality Monitoring Stations (BLUME):
+  
+  Source:
+  Berlin Senate – BLUME Air Quality Monitoring Network
+  https://luftdaten.berlin.de/api/stations
 
-RQ1.
-What is the spatial exposure of schools in Berlin to air pollution based on proximity to official air-quality monitoring stations?
+  Script:
+  scripts/01_data_collection/stations_from_blume_api_v2.py
+  
+  What this script does:
+  Fetches official air-quality monitoring station metadata directly from the BLUME public API
+  Extracts station identifiers, names, geographic coordinates, activity status, and measured components
+  Saves the data in both spatial and non-spatial formats
 
-2. Spatial Exposure Assessment Questions
+  Outputs:
+  data/raw/stations/blume_stations.geojson
+  data/raw/stations/blume_stations.csv
 
-RQ2.
-Which schools are closest to air-quality monitoring stations, and what pollution levels are associated with those stations?
+ 2. Raw Air Quality Measurements:
+  Source: Portal: <https://luftdaten.berlin.de/>  
+   
+   Daily air-pollution measurements (e.g. PM10, PM2.5, NO₂, O₃) were downloaded separately for each monitoring station.
+   Each station provides data as a German-formatted CSV file.
+   Storage: data/raw/air_quality_data/
 
-RQ3.
-How far are schools located from their nearest active air-quality monitoring station across Berlin?
+ 3. School Location Data
+ Source: <https://opendata-esridech.hub.arcgis.com/maps/esri-de-content::schulen-berlin-1/about>  
 
-3. Proximity-Based Risk Questions (Buffer Analysis)
+ Geographic locations of schools in Berlin provided as GeoJSON and CSV
+ storage:
+ data/raw/schools/Schulen.geojson
+ data/raw/schools/Schulen.csv
 
-RQ4.
-How many schools are located within 200 meters of air-pollution monitoring stations?
+# 02_data_cleaning
+ This stage transforms raw, heterogeneous data into clean, consistent, and analysis-ready datasets.
+ ## 1. Cleaning and Filtering Monitoring Stations
+  Script: scripts/02_data_cleaning/filter_active_stations.py
+  
+  * Loads raw station metadata collected from the BLUME API
+  * Filters out inactive stations and stations with invalid coordinates
+   Outputs:
+   data/raw/stations/blume_stations_active.csv
+   data/raw/stations/blume_stations_active.geojson
 
-RQ5.
-Do schools located within 200 meters of monitoring stations experience higher average pollution levels compared to schools located further away?
+  ## 2. Merging and Cleaning Air Quality Measurements
+   Script: scripts/02_data_cleaning/merging_station.py
+    
+  * Iterates over all raw station-level pollution CSV files
+  * Extracts station identifiers and names from file names
+  * Merges all stations into a single, unified dataset
+    Output: data_clean/pollution_clean_long.csv
+  
+  ## 3. Cleaning School Location Data
+   Script: scripts/02_data_cleaning/school_cleaning.py
+   
+  * Loads raw school location data.
+  * Extracts latitude and longitude from spatial geometry
+  * Removes entries with missing or invalid locations
+  * Eliminates duplicate school locations
+  * Saves cleaned school data in both spatial and tabular formats
+ 
+  output: data_clean/berlin_schools_clean.geojson
+          data_clean/berlin_schools_clean.csv
 
-4. Pollutant-Specific Exposure Questions
+# 03_processing
+ ## 1. final_station.py :
+  * Pollutant labels were inspected and standardised to internationally recognised naming conventions (e.g., PM10, PM2.5, NO₂).
+  * This ensured consistency across stations and facilitated aggregation and comparison across pollutant types.
 
-RQ6.
-How does school exposure differ across major regulated pollutants such as NO₂, PM₂.₅, and PM₁₀?
+ ## 2. step1_yearly_aggregation.py
 
-RQ7.
-Which pollutant contributes most to potential exposure risk at school locations?
+  * Script: scripts/03_processing/step1_yearly_aggregation.py
 
-5. Inequality and Spatial Justice Questions
+  * Input: `data_clean/pollution_clean_long.csv` (daily pollution measurements for all stations)
 
-RQ8.
-Is air-pollution exposure at schools evenly distributed across Berlin, or are there spatial patterns of inequality?
+  * Output: `data_clean/station_yearly_pollution.csv` (yearly mean pollution values per station)
 
-RQ9.
-Are schools located in inner-city areas exposed to higher pollution levels than those in outer districts?
+  * Purpose: This script aggregates daily air-pollution measurements into yearly average values for each monitoring station and pollutant.
 
-6. Distance–Exposure Relationship Questions
+  * Method:
+  - Extracts the calendar year from daily timestamps  
+  - Groups pollution measurements by station, pollutant, and year  
+  - Computes the mean pollution level for each group  
+  - Produces a clean, compact dataset suitable for spatial analysis  
 
-RQ10.
-Is there a relationship between distance from pollution monitoring stations and estimated pollution exposure at schools?
+  * Why this step matters:  
+  Daily pollution data are highly variable and unsuitable for long-term exposure assessment. Yearly averages provide a stable and interpretable representation of air quality that can be reliably linked to school locations in subsequent spatial analyses.
 
-RQ11.
-Does pollution exposure decrease as distance from monitoring stations increases?
+  ## 3. step2_attach_station_geometry.py
+  * Attach Station Geometry to Yearly Pollution Data
 
-7. Temporal Analysis Questions (Optional Extension)
+  * Script: `scripts/03_processing/step2_attach_station_geometry.py`
 
-RQ12.
-How does school pollution exposure vary across different seasons or months?
+  * Input:
+    - `data_clean/station_yearly_pollution.csv` (yearly pollution per station)  
+    - `data/raw/blume_stations_active.geojson` (active station locations)
 
-RQ13.
-Are winter pollution levels at schools significantly higher than summer levels?
+ * Output:  `data_clean/stations_yearly_pollution.geojson` (spatial pollution dataset)
 
-8. Multi-Pollutant Exposure Questions (Advanced)
+ * Purpose: This script combines yearly aggregated pollution data with the geographic locations of air-quality monitoring stations to create a spatially enabled pollution dataset.
 
-RQ14.
-Which schools experience the highest cumulative air-pollution burden when considering multiple pollutants simultaneously?
+ * Why this step matters:  
+  Spatial exposure analysis requires pollution data to be linked to geographic locations. This step enables distance-based and buffer-based analyses by transforming tabular pollution data into a spatial dataset.
 
-RQ15.
-How does a combined pollution exposure index change the ranking of high-risk schools compared to single-pollutant analysis?
+# 04_exposure_analysis
+ ## stations_vs_schools_1000m.py
+   
+ - Calculates how many schools are located within a 1 km radius of each active BLUME air quality monitoring station in Berlin.
 
-9. Policy and Planning Questions (Urban Technology Focus)
+ - Method
 
-RQ16.
-Which schools should be prioritized for mitigation measures based on their pollution exposure levels?
+   - Load cleaned school locations and active station data
 
-RQ17.
-How can spatial exposure analysis inform future school-site planning and traffic-management strategies in Berlin?
+   - Reproject to EPSG:25833 for accurate distance calculation
 
-10. Methodological Reflection Questions
+   - Create 1 km buffers around stations
 
-RQ18.
-How do nearest-station and buffer-based exposure assessment methods differ in identifying high-risk schools?
+   - Spatially join schools within buffers
 
-RQ19.
-What are the limitations of using monitoring-station proximity as a proxy for school-level pollution exposure?
+   - Count schools per station
+  
 
-11. Future Research Questions (Beyond This Study)
+  - Outputs
 
-RQ20.
-How could machine-learning or spatial interpolation techniques improve pollution exposure estimation if denser data were available?
+    - data/derived/stations_school_1000m_counts.csv
+    → School count per station
+
+    - data/derived/stations_school_1000m.geojson
+    → Station geometries with school counts
+
+    - data/derived/schools_per_station_1000m.png
+    → Bar chart of schools per station
+
+    - data/derived/stations_school_1000m_map.html
+    → Interactive map with 1 km buffers
+  
+  - Purpose
+   - Why This Is Important
+
+     - Which monitoring stations matter most for school exposure?
+     - Are pollution hotspots near dense school clusters?
+     - Where should policy focus?
+
+   - Identifies monitoring stations that are most relevant from a school exposure perspective and supports further pollution–exposure analysis.
+
+ ## mean_no2_per_station.py
+  This script calculates the long-term average annual NO₂ concentration for each monitoring station in Berlin and compares it to the WHO annual guideline.
+  It provides a station-level pollution ranking to identify persistent NO₂ hotspots.
+
+   - Method
+
+     - Load yearly aggregated pollution data (station_yearly_pollution.csv).
+     - Standardise pollutant names.
+     - Filter only NO₂ observations.
+     - Compute the mean NO₂ concentration per station (averaged across available years).
+     - Compare results against the WHO annual guideline (10 µg/m³).
+     - Generate a bar chart visualisation.
+
+   - Outputs
+
+      - Saved in:
+
+       data/derived/
+
+        mean_no2_per_station.csv
+       → Table containing mean NO₂ concentration per station
+
+      - Saved in:
+
+         data/derived/figures/
+
+         mean_no2_per_station.png
+         → Bar chart of station-wise NO₂ levels with WHO guideline reference line
+
+ ## mean_pm10_per_station.py
+  This script calculates the long-term average annual PM10 concentration for each air quality monitoring station in Berlin and compares it against the WHO annual air quality guideline.
+  It provides a station-level ranking to identify persistent PM10 hotspots.
+     
+  - Method
+
+      - Load yearly aggregated pollution data (station_yearly_pollution.csv).
+
+      - Standardise pollutant names for consistency.
+
+      - Filter only PM10 observations.
+
+      - Compute the mean PM10 concentration per station (averaged across available years).
+
+      - Compare results with the WHO annual guideline (15 µg/m³).
+
+      - Generate a bar chart visualisation.
+
+
+  - Outputs
+
+      - Saved in:
+
+        data/derived/
+
+        mean_pm10_per_station.csv
+        → Table containing mean PM10 concentration per station
+
+      - Saved in:
+
+        data/derived/figures/
+
+        mean_pm10_per_station.png
+        → Bar chart showing station-wise PM10 levels with WHO reference line
+
+ ## mean_pm25_per_station.py
+  This script calculates the long-term average annual PM2.5 concentration for each air quality monitoring station in Berlin and compares it to the WHO annual air quality guideline.
+  It identifies stations with persistently high fine particulate pollution levels.
+
+  - Method
+
+      - Load yearly aggregated pollution data (station_yearly_pollution.csv).
+
+      - Standardise pollutant names for consistency.
+
+      - Filter only PM2.5 observations.
+
+      - Compute the mean PM2.5 concentration per station (averaged across available years).
+
+      - Compare results with the WHO annual guideline (5 µg/m³).
+
+      - Generate a bar chart visualisation.
+  
+  - Outputs
+
+      - Saved in:
+
+      data/derived/
+
+      mean_pm25_per_station.csv
+      → Table containing mean PM2.5 concentration per station
+
+      - Saved in:
+
+      data/derived/figures/
+
+      mean_pm25_per_station.png
+      → Bar chart showing station-wise PM2.5 levels with WHO reference line
+ ## exceedance-vs-school_exposure.py
+  This script links annual air pollution levels at monitoring stations with school proximity to assess potential exposure relevance. It evaluates whether stations exceeding WHO air quality guidelines are located near a higher number of schools.
+
+ - Method
+
+   Load:
+    - station_yearly_pollution.csv (annual mean concentrations per station)
+    - stations_school_1000m_counts.csv (number of schools within 1 km)
+
+   Standardise:
+
+   - Station IDs (format alignment)
+   - Pollutant names (PM2.5, PM10, NO2)
+
+   Filter:
+
+    - Use the most recent year available
+    - Focus only on PM2.5, PM10, and NO2
+   
+   Apply WHO annual guidelines:
+
+    - PM2.5 → 5 µg/m³
+    - PM10 → 15 µg/m³
+    - NO2 → 10 µg/m³
+  
+   Merge pollution data with school counts.
+
+   Generate scatter plots for each pollutant showing:
+
+   - X -axis: Number of schools within buffer
+
+   - Y-axis: Annual mean concentration
+
+   - Dashed line: WHO annual limit
+
+   - Points classified as above or below WHO threshold
+
+
+ - Outputs
+
+    - Saved in:
+
+    - data/derived/figures/
+
+    - NO2_vs_school_exposure_WHO_<year>.png
+
+    - PM10_vs_school_exposure_WHO_<year>.png
+
+    - PM2.5_vs_school_exposure_WHO_<year>.png
+
+ - Purpose
+
+   - This analysis examines whether air pollution exceedance levels coincide with higher school density around monitoring stations,   supporting assessment of potential environmental health relevance in urban areas.
+  
+  
+ ## Exposure Burden Index Analysis
+   This script computes an Exposure Burden Index (EBI) for Berlin air-quality monitoring stations by combining:
+  
+  - Annual mean pollutant concentration
+
+  - Number of schools located within a 1 km buffer
+
+  The index is defined as:
+
+  - Exposure Burden = Annual Mean Concentration × School Count
+
+  This identifies locations where high pollution levels coincide with high school density.
+
+  Research Objective:
+   - Which monitoring stations represent the highest combined pollution intensity and potential school exposure burden in Berlin?
+
+  
+  Methodology
+
+  - Load yearly aggregated station pollution data.
+  - Standardise pollutant names and station IDs.
+  - Merge with station-level school counts (1 km buffer).
+  - Compute Exposure Burden Index per station
+  - Rank stations in descending order.
+  - Generate tables and visualisations.
+
+Outputs
+
+ - For each pollutant:
+  - Tables 
+   - data/derived/NO2_exposure_burden_<year>.csv
+   - data/derived/PM10_exposure_burden_<year>.csv
+   - data/derived/PM2.5_exposure_burden_<year>.csv
+
+Figures
+ - data/derived/figures/<pollutant>_exposure_burden_<year>.png
+ - Bar charts ranking stations by exposure burden.
+
+ 
+Interpretation
+
+ A high Exposure Burden Index indicates:
+ - Elevated pollutant concentration
+    AND
+ - A high number of nearby schools
+
+ These stations represent priority areas for environmental health and urban planning interventions.
+
+## Monitoring Adequacy & Health Risk Assessment
+
+ - Objective
+
+   - This analysis evaluates whether Berlin schools that are exposed to elevated air pollution levels are also adequately covered by nearby monitoring stations.
+   
+ - The assessment combines:
+
+   - WHO 2021 annual air quality guidelines
+
+   - Spatial proximity to monitoring stations (1 km threshold)
+
+   - School-level exposure context
+
+Methodology
+
+ - For each pollutant (NO₂, PM10, PM2.5):
+
+   - Latest yearly mean concentration per station was used.
+
+ - WHO annual limits were applied:
+
+    - NO₂: 10 µg/m³
+
+    - PM10: 15 µg/m³
+
+    - PM2.5: 5 µg/m³
+
+  - Each school was classified based on:
+
+    - Distance to nearest monitoring station (≤1 km = Covered)
+
+    - Whether the nearest station exceeded WHO limits
+  
+Outputs
+
+  - The script generates:
+
+   - 3-panel publication-style figure
+
+   - Separate pollutant plots with WHO guideline lines
+
+   - Exposure summary tables
+
+   - Monitoring adequacy classification results
+
+Interpretation Scope
+
+   - Results represent a distance-based monitoring adequacy assessment, not direct on-site pollution measurements at schools.
+
+   - Findings should be interpreted within the defined assumptions:
+
+   - 1 km spatial threshold
+
+   - Nearest-station proxy
+
+   - WHO 2021 annual guidelines  

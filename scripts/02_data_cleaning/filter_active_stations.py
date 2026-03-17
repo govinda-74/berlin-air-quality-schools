@@ -5,8 +5,11 @@ from shapely.geometry import Point
 from pathlib import Path
 
 # INPUT / OUTPUT PATHS
-IN_CSV = Path("data/blume_stations.csv")   # change if your file name/path differs
-OUT_DIR = Path("data")
+
+ROOT = Path(__file__).resolve().parents[2]   # BERLIN/
+
+IN_CSV = ROOT / "data" / "raw" / "stations" / "blume_stations.csv"
+OUT_DIR = ROOT / "data" / "raw" / "stations"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # --- Load ---
