@@ -1,0 +1,161 @@
+station_id,station_name,pollutant,year,unit,mean_value
+10,Wedding,Feinstaub (PM10),2024,µg/m³,14.934426229508198
+10,Wedding,"Feinstaub (PM2,5)",2024,µg/m³,11.540983606557377
+10,Wedding,Ozon,2024,µg/m³,27.39344262295082
+10,Wedding,Stickoxide,2024,µg/m³,27.508196721311474
+10,Wedding,Stickstoffdioxid,2024,µg/m³,19.459016393442624
+10,Wedding,Stickstoffmonoxid,2024,µg/m³,5.442622950819672
+27,Marienfelde,Ozon,2024,µg/m³,33.278688524590166
+27,Marienfelde,Stickoxide,2024,µg/m³,9.950819672131148
+27,Marienfelde,Stickstoffdioxid,2024,µg/m³,8.885245901639344
+27,Marienfelde,Stickstoffmonoxid,2024,µg/m³,2.1475409836065573
+32,Grunewald,Feinstaub (PM10),2024,µg/m³,9.583333333333334
+32,Grunewald,"Feinstaub (PM2,5)",2024,µg/m³,7.5
+32,Grunewald,Ozon,2024,µg/m³,32.483333333333334
+32,Grunewald,Stickoxide,2024,µg/m³,9.266666666666667
+32,Grunewald,Stickstoffdioxid,2024,µg/m³,8.216666666666667
+32,Grunewald,Stickstoffmonoxid,2024,µg/m³,2.2333333333333334
+42,Neukölln,Feinstaub (PM10),2024,µg/m³,16.416666666666668
+42,Neukölln,"Feinstaub (PM2,5)",2024,µg/m³,12.933333333333334
+42,Neukölln,Kohlenmonoxid,2024,mg/m³,0.319672131147541
+42,Neukölln,Ozon,2024,µg/m³,28.770491803278688
+42,Neukölln,Stickoxide,2024,µg/m³,19.59016393442623
+42,Neukölln,Stickstoffdioxid,2024,µg/m³,15.852459016393443
+42,Neukölln,Stickstoffmonoxid,2024,µg/m³,3.1147540983606556
+77,Buch,Feinstaub (PM10),2024,µg/m³,13.163934426229508
+77,Buch,"Feinstaub (PM2,5)",2024,µg/m³,9.836065573770492
+77,Buch,Ozon,2024,µg/m³,28.9672131147541
+77,Buch,Stickoxide,2024,µg/m³,14.262295081967213
+77,Buch,Stickstoffdioxid,2024,µg/m³,11.59016393442623
+77,Buch,Stickstoffmonoxid,2024,µg/m³,3.0163934426229506
+85,Friedrichshagen,Feinstaub (PM10),2024,µg/m³,11.40983606557377
+85,Friedrichshagen,"Feinstaub (PM2,5)",2024,µg/m³,9.0
+85,Friedrichshagen,Ozon,2024,µg/m³,34.377049180327866
+85,Friedrichshagen,Stickoxide,2024,µg/m³,10.442622950819672
+85,Friedrichshagen,Stickstoffdioxid,2024,µg/m³,9.360655737704919
+85,Friedrichshagen,Stickstoffmonoxid,2024,µg/m³,2.19672131147541
+117,Schildhornstraße,Feinstaub (PM10),2024,µg/m³,15.065573770491802
+117,Schildhornstraße,"Feinstaub (PM2,5)",2024,µg/m³,12.21311475409836
+117,Schildhornstraße,Kohlenmonoxid,2024,mg/m³,0.2901639344262295
+117,Schildhornstraße,Stickoxide,2024,µg/m³,28.295081967213115
+117,Schildhornstraße,Stickstoffdioxid,2024,µg/m³,16.852459016393443
+117,Schildhornstraße,Stickstoffmonoxid,2024,µg/m³,7.704918032786885
+124,Mariendorfer-Damm,Feinstaub (PM10),2024,µg/m³,21.327868852459016
+124,Mariendorfer-Damm,"Feinstaub (PM2,5)",2024,µg/m³,15.081967213114755
+124,Mariendorfer-Damm,Stickoxide,2024,µg/m³,59.75409836065574
+124,Mariendorfer-Damm,Stickstoffdioxid,2024,µg/m³,24.34426229508197
+124,Mariendorfer-Damm,Stickstoffmonoxid,2024,µg/m³,23.147540983606557
+144,Silbersteinstraße,Feinstaub (PM10),2024,µg/m³,19.78688524590164
+144,Silbersteinstraße,"Feinstaub (PM2,5)",2024,µg/m³,14.278688524590164
+144,Silbersteinstraße,Stickoxide,2024,µg/m³,60.77049180327869
+144,Silbersteinstraße,Stickstoffdioxid,2024,µg/m³,26.049180327868854
+144,Silbersteinstraße,Stickstoffmonoxid,2024,µg/m³,22.81967213114754
+145,Frohnau,Ozon,2024,µg/m³,31.016393442622952
+145,Frohnau,Stickoxide,2024,µg/m³,11.098360655737705
+145,Frohnau,Stickstoffdioxid,2024,µg/m³,9.327868852459016
+145,Frohnau,Stickstoffmonoxid,2024,µg/m³,2.5245901639344264
+171,Mitte,Feinstaub (PM10),2024,µg/m³,15.885245901639344
+171,Mitte,"Feinstaub (PM2,5)",2024,µg/m³,12.295081967213115
+171,Mitte,Stickoxide,2024,µg/m³,20.868852459016395
+171,Mitte,Stickstoffdioxid,2024,µg/m³,16.360655737704917
+171,Mitte,Stickstoffmonoxid,2024,µg/m³,3.4754098360655736
+174,Frankfurter-Allee,Feinstaub (PM10),2024,µg/m³,20.114754098360656
+174,Frankfurter-Allee,"Feinstaub (PM2,5)",2024,µg/m³,14.918032786885245
+174,Frankfurter-Allee,Kohlenmonoxid,2024,mg/m³,0.33278688524590166
+174,Frankfurter-Allee,Ozon,2024,µg/m³,24.65573770491803
+174,Frankfurter-Allee,Stickoxide,2024,µg/m³,45.78688524590164
+174,Frankfurter-Allee,Stickstoffdioxid,2024,µg/m³,23.65573770491803
+174,Frankfurter-Allee,Stickstoffmonoxid,2024,µg/m³,14.442622950819672
+190,Leipziger-Straße,Feinstaub (PM10),2024,µg/m³,17.901639344262296
+190,Leipziger-Straße,"Feinstaub (PM2,5)",2024,µg/m³,12.688524590163935
+190,Leipziger-Straße,Stickoxide,2024,µg/m³,51.01639344262295
+190,Leipziger-Straße,Stickstoffdioxid,2024,µg/m³,24.262295081967213
+190,Leipziger-Straße,Stickstoffmonoxid,2024,µg/m³,17.459016393442624
+221,Karl-Marx-Straße,Feinstaub (PM10),2024,µg/m³,17.918032786885245
+221,Karl-Marx-Straße,"Feinstaub (PM2,5)",2024,µg/m³,13.19672131147541
+221,Karl-Marx-Straße,Stickoxide,2024,µg/m³,39.36065573770492
+221,Karl-Marx-Straße,Stickstoffdioxid,2024,µg/m³,21.475409836065573
+221,Karl-Marx-Straße,Stickstoffmonoxid,2024,µg/m³,11.721311475409836
+282,Karlshorst,Stickoxide,2024,µg/m³,19.016393442622952
+282,Karlshorst,Stickstoffdioxid,2024,µg/m³,14.508196721311476
+282,Karlshorst,Stickstoffmonoxid,2024,µg/m³,3.540983606557377
+10,Wedding,Feinstaub (PM10),2025,µg/m³,16.157894736842106
+10,Wedding,"Feinstaub (PM2,5)",2025,µg/m³,10.414473684210526
+10,Wedding,Ozon,2025,µg/m³,53.35526315789474
+10,Wedding,Stickoxide,2025,µg/m³,22.5625
+10,Wedding,Stickstoffdioxid,2025,µg/m³,17.19736842105263
+10,Wedding,Stickstoffmonoxid,2025,µg/m³,3.9934210526315788
+27,Marienfelde,Ozon,2025,µg/m³,56.10526315789474
+27,Marienfelde,Stickoxide,2025,µg/m³,8.930921052631579
+27,Marienfelde,Stickstoffdioxid,2025,µg/m³,7.7730263157894735
+27,Marienfelde,Stickstoffmonoxid,2025,µg/m³,2.2401315789473686
+32,Grunewald,Feinstaub (PM10),2025,µg/m³,11.838815789473685
+32,Grunewald,"Feinstaub (PM2,5)",2025,µg/m³,7.884868421052632
+32,Grunewald,Ozon,2025,µg/m³,51.333333333333336
+32,Grunewald,Stickoxide,2025,µg/m³,7.796052631578948
+32,Grunewald,Stickstoffdioxid,2025,µg/m³,7.0
+32,Grunewald,Stickstoffmonoxid,2025,µg/m³,2.1710526315789473
+42,Neukölln,Feinstaub (PM10),2025,µg/m³,18.424342105263158
+42,Neukölln,"Feinstaub (PM2,5)",2025,µg/m³,11.391447368421053
+42,Neukölln,Kohlenmonoxid,2025,mg/m³,0.28980263157894737
+42,Neukölln,Ozon,2025,µg/m³,53.67763157894737
+42,Neukölln,Stickoxide,2025,µg/m³,17.151315789473685
+42,Neukölln,Stickstoffdioxid,2025,µg/m³,14.273026315789474
+42,Neukölln,Stickstoffmonoxid,2025,µg/m³,2.786184210526316
+77,Buch,Feinstaub (PM10),2025,µg/m³,12.953947368421053
+77,Buch,"Feinstaub (PM2,5)",2025,µg/m³,8.828947368421053
+77,Buch,Ozon,2025,µg/m³,47.108552631578945
+77,Buch,Stickoxide,2025,µg/m³,9.648026315789474
+77,Buch,Stickstoffdioxid,2025,µg/m³,8.338815789473685
+77,Buch,Stickstoffmonoxid,2025,µg/m³,2.2664473684210527
+85,Friedrichshagen,Feinstaub (PM10),2025,µg/m³,13.250836120401338
+85,Friedrichshagen,"Feinstaub (PM2,5)",2025,µg/m³,8.976588628762542
+85,Friedrichshagen,Ozon,2025,µg/m³,58.0728476821192
+85,Friedrichshagen,Stickoxide,2025,µg/m³,8.155629139072847
+85,Friedrichshagen,Stickstoffdioxid,2025,µg/m³,7.198675496688741
+85,Friedrichshagen,Stickstoffmonoxid,2025,µg/m³,2.1258278145695364
+117,Schildhornstraße,Feinstaub (PM10),2025,µg/m³,16.355263157894736
+117,Schildhornstraße,"Feinstaub (PM2,5)",2025,µg/m³,10.506578947368421
+117,Schildhornstraße,Kohlenmonoxid,2025,mg/m³,0.2542763157894737
+117,Schildhornstraße,Stickoxide,2025,µg/m³,22.789473684210527
+117,Schildhornstraße,Stickstoffdioxid,2025,µg/m³,15.411184210526315
+117,Schildhornstraße,Stickstoffmonoxid,2025,µg/m³,5.098684210526316
+124,Mariendorfer-Damm,Feinstaub (PM10),2025,µg/m³,22.43092105263158
+124,Mariendorfer-Damm,"Feinstaub (PM2,5)",2025,µg/m³,13.210526315789474
+124,Mariendorfer-Damm,Stickoxide,2025,µg/m³,53.91447368421053
+124,Mariendorfer-Damm,Stickstoffdioxid,2025,µg/m³,26.25986842105263
+124,Mariendorfer-Damm,Stickstoffmonoxid,2025,µg/m³,18.14144736842105
+144,Silbersteinstraße,Feinstaub (PM10),2025,µg/m³,21.325657894736842
+144,Silbersteinstraße,"Feinstaub (PM2,5)",2025,µg/m³,13.032894736842104
+144,Silbersteinstraße,Stickoxide,2025,µg/m³,46.79934210526316
+144,Silbersteinstraße,Stickstoffdioxid,2025,µg/m³,25.167763157894736
+144,Silbersteinstraße,Stickstoffmonoxid,2025,µg/m³,14.203947368421053
+145,Frohnau,Ozon,2025,µg/m³,52.48026315789474
+145,Frohnau,Stickoxide,2025,µg/m³,7.3519736842105265
+145,Frohnau,Stickstoffdioxid,2025,µg/m³,6.582236842105263
+145,Frohnau,Stickstoffmonoxid,2025,µg/m³,2.125
+171,Mitte,Feinstaub (PM10),2025,µg/m³,18.092105263157894
+171,Mitte,"Feinstaub (PM2,5)",2025,µg/m³,11.154605263157896
+171,Mitte,Stickoxide,2025,µg/m³,17.539473684210527
+171,Mitte,Stickstoffdioxid,2025,µg/m³,14.213815789473685
+171,Mitte,Stickstoffmonoxid,2025,µg/m³,3.0197368421052633
+174,Frankfurter-Allee,Feinstaub (PM10),2025,µg/m³,20.707236842105264
+174,Frankfurter-Allee,"Feinstaub (PM2,5)",2025,µg/m³,12.947368421052632
+174,Frankfurter-Allee,Kohlenmonoxid,2025,mg/m³,0.2950657894736842
+174,Frankfurter-Allee,Ozon,2025,µg/m³,47.83223684210526
+174,Frankfurter-Allee,Stickoxide,2025,µg/m³,39.463815789473685
+174,Frankfurter-Allee,Stickstoffdioxid,2025,µg/m³,23.213815789473685
+174,Frankfurter-Allee,Stickstoffmonoxid,2025,µg/m³,10.680921052631579
+190,Leipziger-Straße,Feinstaub (PM10),2025,µg/m³,22.401315789473685
+190,Leipziger-Straße,"Feinstaub (PM2,5)",2025,µg/m³,12.036184210526315
+190,Leipziger-Straße,Stickoxide,2025,µg/m³,40.0625
+190,Leipziger-Straße,Stickstoffdioxid,2025,µg/m³,23.94407894736842
+190,Leipziger-Straße,Stickstoffmonoxid,2025,µg/m³,10.588815789473685
+221,Karl-Marx-Straße,Feinstaub (PM10),2025,µg/m³,21.063333333333333
+221,Karl-Marx-Straße,"Feinstaub (PM2,5)",2025,µg/m³,12.67
+221,Karl-Marx-Straße,Stickoxide,2025,µg/m³,34.06578947368421
+221,Karl-Marx-Straße,Stickstoffdioxid,2025,µg/m³,21.75
+221,Karl-Marx-Straße,Stickstoffmonoxid,2025,µg/m³,8.161184210526315
+282,Karlshorst,Stickoxide,2025,µg/m³,15.56578947368421
+282,Karlshorst,Stickstoffdioxid,2025,µg/m³,11.980263157894736
+282,Karlshorst,Stickstoffmonoxid,2025,µg/m³,3.263157894736842

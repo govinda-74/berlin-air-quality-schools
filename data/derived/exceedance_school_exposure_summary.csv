@@ -1,0 +1,6 @@
+pollutant,exceeds_who,stations,avg_schools,max_schools
+NO2,False,5,0.6,3
+NO2,True,10,9.2,15
+PM10,False,3,1.0,3
+PM10,True,9,9.666666666666666,15
+PM2.5,True,12,7.5,15

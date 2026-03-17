@@ -1,9 +1,9 @@
 # Ignore large data files
-data/
-*.geojson
-*.csv
-*.gml
-*.html
+#data/
+#*.geojson
+#*.csv
+#*.gml
+#*.html
 
 # Ignore cache and environments
 __pycache__/

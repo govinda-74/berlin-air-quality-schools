@@ -1,0 +1,113 @@
+station_id,station_name,lat,lon,active,components
+mc010,010 Wedding,52.54291,13.34926,True,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'chb_1h', 'chb_24h', 'chb_1m', 'chb_1y', 'cht_1h', 'cht_24h', 'cht_1m', 'cht_1y', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'o3_1y', 'mhtemp_1h', 'pns-d_1h', 'sq-vol25_1h', 'o3_12mg', 'pm10_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg', 'ebc_1h', 'ebc_24h', 'ebc_1m', 'ebc_1y', 'ebcbb_24h', 'ebcbb_1m', 'ebcbb_1y']"
+mc018,018 Schöneberg,52.48579,13.34885,False,"['no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'mhtemp_1h', 'pns-d_1h', 'pm10_1y', 'no_12mg', 'nox_12mg', 'no2_12mg']"
+mc027,027 Marienfelde,52.3984,13.368075,True,"['pm10_24h', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'o3_1y', 'mhtemp_1h', 'pns-d_1h', 'pm10_1m', 'pm10_1y', 'o3_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg']"
+mc032,032 Grunewald,52.47319,13.22514,True,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'o3_1y', 'mhtemp_1h', 'pns-d_1h', 'o3_12mg', 'pm10_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg']"
+mc042,042 Neukölln,52.489451,13.430844,True,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'chb_1h', 'chb_24h', 'chb_1m', 'chb_1y', 'cht_1h', 'cht_24h', 'cht_1m', 'cht_1y', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'o3_1y', 'mhtemp_1h', 'pns-d_1h', 'sq-vol10_1h', 'sq-vol25_1h', 'o3_12mg', 'pm10_12mg', 'cht_12mg', 'chb_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg', 'ebc_1h', 'ebc_24h', 'ebc_1m', 'ebc_1y', 'ebcbb_24h', 'ebcbb_1m', 'ebcbb_1y', 'co_1m', 'co_12mg', 'co_1y', 'co_1h', 'co_8hg', 'co_24h']"
+mc077,077 Buch,52.6441,13.4833,True,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'o3_1y', 'mhtemp_1h', 'pns-d_1h', 'sq-vol10_1h', 'sq-vol25_1h', 'o3_12mg', 'pm10_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg', 'ebc_1h', 'ebc_24h', 'ebc_1m', 'ebc_1y', 'ebcbb_24h', 'ebcbb_1m', 'ebcbb_1y']"
+mc085,085 Friedrichshagen,52.447697,13.64705,True,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'o3_1y', 'mhtemp_1h', 'pns-d_1h', 'o3_12mg', 'pm10_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg']"
+mc115,115 Hardenbergplatz,52.50663,13.332976,False,"['no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'mhtemp_1h', 'pns-d_1h', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'o3_1y', 'pm10_24h', 'pm10_1m', 'pm10_1y', 'no_12mg', 'nox_12mg', 'no2_12mg']"
+mc117,117 Schildhornstraße,52.46362,13.31832,True,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'chb_1h', 'chb_24h', 'chb_1m', 'chb_1y', 'cht_1h', 'cht_24h', 'cht_1m', 'cht_1y', 'co_1h', 'co_8hg', 'co_24h', 'co_1m', 'co_1y', 'mhtemp_1h', 'pns-d_1h', 'sq-vol10_1h', 'pm10_12mg', 'co_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'chb_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg', 'cht_12mg']"
+mc124,124 Mariendorfer Damm,52.438115,13.38772,True,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'mhtemp_1h', 'pns-d_1h', 'pm10_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg']"
+mc143,143 Silbersteinstraße,52.46752,13.44162,False,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'mhtemp_1h', 'pns-d_1h', 'pm10_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg']"
+mc145,145 Frohnau,52.65327,13.29608,True,"['pm10_1h', 'pm10_24h', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'o3_1y', 'mhtemp_1h', 'pns-d_1h', 'o3_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg']"
+mc171,171 Mitte,52.51361,13.41883,True,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'mhtemp_1h', 'pns-d_1h', 'sq-vol10_1h', 'sq-vol25_1h', 'pm10_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg']"
+mc174,174 Frankfurter Allee,52.51407,13.46993,True,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'chb_1h', 'chb_24h', 'chb_1m', 'chb_1y', 'so2_1h', 'so2_24h', 'so2_1m', 'so2_1y', 'cht_1h', 'cht_24h', 'cht_1m', 'cht_1y', 'co_1h', 'co_8hg', 'co_24h', 'co_1m', 'co_1y', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'o3_1y', 'mhtemp_1h', 'pns-d_1h', 'sq-vol10_1h', 'sq-vol25_1h', 'o3_12mg', 'pm10_12mg', 'co_12mg', 'cht_12mg', 'chb_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg', 'ebc_1h', 'ebc_24h', 'ebc_1m', 'ebc_1y', 'ebcbb_24h', 'ebcbb_1m', 'ebcbb_1y']"
+mc220,220 Karl-Marx-Straße,52.48168,13.43394,False,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'mhtemp_1h', 'pns-d_1h', 'pm10_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg']"
+mc282,282 Karlshorst,52.4853,13.5295,True,"['no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_1h', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_1h', 'nox_24h', 'nox_1m', 'nox_1y', 'so2_1h', 'so2_24h', 'so2_1m', 'so2_1y', 'co_1h', 'co_24h', 'co_1m', 'co_1y', 'mhtemp_1h', 'pns-d_1h', 'no_12mg', 'nox_12mg', 'no2_12mg', 'co_12mg']"
+mw088,088 Messwagen Leipziger Str.,52.51018,13.3884,False,"['pm10_1h', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'no_1h', 'no_24h', 'no_1m', 'no2_1h', 'no2_24h', 'no2_1m', 'nox_1h', 'nox_24h', 'nox_1m', 'co_1h', 'co_8hg', 'co_24h', 'co_1m', 'o3_1h', 'o3_8hg', 'o3_24h', 'o3_1m', 'co_1y', 'no2_1y', 'nox_1y', 'no_1y', 'o3_1y', 'pm10_1y', 'mhtemp_1h', 'pns-d_1h', 'co_12mg', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_1y', 'pm2_12mg']"
+mc014,014 Sondermessstation,52.516549,13.283871,False,"['mhtemp_1h', 'pns-d_1h', 'nox_1h', 'no2_1h', 'no_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_24h', 'nox_1m', 'nox_1y', 'no_12mg', 'nox_12mg', 'no2_12mg']"
+mc190,190 Leipziger Straße,52.509813,13.382377,True,"['mhtemp_1h', 'pns-d_1h', 'nox_1h', 'no2_1h', 'no_1h', 'pm10_1h', 'no_24h', 'no_1m', 'no_1y', 'no2_24h', 'no2_1m', 'no2_1y', 'nox_24h', 'nox_1m', 'nox_1y', 'pm10_24h', 'pm10_24hg', 'pm10_1m', 'pm10_1y', 'pm10_12mg', 'no_12mg', 'nox_12mg', 'no2_12mg', 'pm2_1y', 'pm2_1h', 'pm2_24h', 'pm2_1m', 'pm2_12mg']"
+MP501,501 Berliner Allee,52.550383,13.460693,False,[]
+MP514,514 Alt-Friedrichsfelde,52.510467,13.506573,False,[]
+MP507,507 Michael-Brückner-Straße,52.455129,13.511998,False,[]
+MP547,547 Landsberger Allee,52.523165,13.435026,False,[]
+MP555,555 Hermannplatz,52.487391,13.424705,False,[]
+mc221,221 Karl-Marx-Straße,52.483812,13.429672,True,"['no2_1h', 'pm2_1h', 'nox_1h', 'pm10_1h', 'no_1h', 'pm2_24h', 'pm10_24h', 'no2_24h', 'no_24h', 'nox_24h', 'pm10_24hg', 'no_1m', 'no2_1m', 'no_1y', 'pns-d_1h', 'mhtemp_1h', 'pm2_12mg', 'nox_1m', 'no2_1y', 'pm2_1m', 'pm2_1y', 'nox_12mg', 'no_12mg', 'pm10_1y', 'pm10_1m', 'no2_12mg', 'nox_1y', 'pm10_12mg']"
+mc144,144 Silbersteinstraße,52.46747,13.44121,True,"['no2_1h', 'no_1h', 'no_24h', 'no2_24h', 'no_1m', 'no2_1m', 'no2_12mg', 'no_12mg', 'no2_1y', 'no_1y', 'pm10_1h', 'nox_1h', 'pm2_1h', 'nox_24h', 'pm2_24h', 'pm10_24h', 'pm10_24hg', 'pm2_1m', 'nox_1m', 'pm10_1m', 'nox_12mg', 'pm10_12mg', 'pm2_12mg', 'pm10_1y', 'nox_1y', 'pm2_1y']"
+mc001,001 Reinickendorf,52.621829,13.229566,False,[]
+mc002,002 Reinickendorf,52.623,13.292,False,[]
+mc003,003 Reinickendorf,52.618695,13.338435,False,[]
+mc004,004 Reinickendorf,52.587524,13.233533,False,[]
+mc005,005 Reinickendorf,52.584661,13.290258,False,[]
+mc006,006 Reinickendorf,52.586765,13.342714,False,[]
+mc007,007 Spandau,52.556012,13.168637,False,[]
+mc008,008 Spandau,52.553504,13.228926,False,[]
+mc009,009 Reinickendorf,52.550473,13.288726,False,[]
+mc011,011 Mitte,52.550835,13.396135,False,[]
+mc012,012 Spandau,52.51371,13.167007,False,[]
+mc013,013 Spandau,52.517792,13.216449,False,[]
+mc015,015 Mitte,52.519065,13.338483,False,[]
+mc017,017 Charlottenburg-Wilmersdorf,52.470701,13.293589,False,[]
+mc019,019 Neukölln,52.478011,13.417132,False,[]
+mc020,020 Neukölln,52.474845,13.455087,False,[]
+mc022,022 Steglitz-Zehlendorf,52.439692,13.286298,False,[]
+mc021,021 Steglitz-Zehlendorf,52.444632,13.242434,False,[]
+mc023,023 Steglitz-Zehlendorf,52.44445,13.341219,False,[]
+mc024,024 Neukölln,52.441471,13.413087,False,[]
+mc025,025 Neukölln,52.446028,13.46129,False,[]
+mc026,026 Steglitz-Zehlendorf,52.409652,13.27329,False,[]
+mc028,028 Tempelhof-Schöneberg,52.411658,13.408526,False,[]
+mc029,029 Neukölln,52.411248,13.485438,False,[]
+mc030,030 Neukölln,52.41704,13.518943,False,[]
+mc031,031 Tempelhof-Schöneberg,52.377037,13.404188,False,[]
+mc041,041 Spandau,52.532572,13.260391,False,[]
+mc043,043 Tempelhof-Schöneberg,52.459952,13.416043,False,[]
+mc044,044 Reinickendorf,52.569553,13.356053,False,[]
+mc045,045 Reinickendorf,52.653495,13.296991,False,[]
+mc046,046 Steglitz-Zehlendorf,52.416938,13.129304,False,[]
+mc071,071 Mitte,52.517435,13.410911,False,[]
+mc072,072 Pankow,52.590178,13.402006,False,[]
+mc073,073 Friedrichhain-Kreuzberg,52.552676,13.467238,False,[]
+mc074,074 Friedrichshain-Kreuzberg,52.515516,13.453396,False,[]
+mc076,076 Treptow-Köpenick,52.460219,13.52216,False,[]
+mc078,078 Pankow,52.588328,13.459159,False,[]
+mc075,075 Lichtenberg,52.513703,13.521132,False,[]
+mc079,079 Marzahn-Hellersdorf,52.557618,13.530085,False,[]
+mc080,080 Marzahn-Hellersdorf,52.548536,13.583056,False,[]
+mc084,084 Treptow-Köpenick,52.443624,13.583291,False,[]
+mc082,082 Lichtenberg,52.482329,13.525793,False,[]
+mc081,081 Marzahn-Hellersdorf,52.513074,13.57842,False,[]
+mc083,083 Treptow-Köpenick,52.475771,13.5942,False,[]
+MP504,504 Beusselstraße,52.529022,13.328524,False,[]
+MP505,505 Potsdamer Straße,52.501411,13.363945,False,[]
+MP531,531 Spandauer Damm,52.518363,13.281749,False,[]
+MP537,537 Alt Moabit,52.52391,13.328807,False,[]
+MP539,539 Schloßstraße,52.458795,13.322413,False,[]
+MP542,542 Tempelhofer Damm,52.465184,13.385442,False,[]
+MP562,562 Friedrichstraße,52.514272,13.389155,False,[]
+MP573,573 Badstraße,52.550217,13.385051,False,[]
+MP576,576 Klosterstraße,52.531168,13.196681,False,[]
+MP579,579 Eichborndamm,52.570201,13.312675,False,[]
+MP581,581 Markgrafendamm,52.498316,13.465107,False,[]
+MP545,545 Sonnenallee,52.484198,13.434745,False,[]
+MP584,584 Karl-Marx-Straße,52.483807,13.429663,False,[]
+MP525,525 Leipziger Straße,52.510353,13.391199,False,[]
+MP528,528 Kantstraße,52.506495,13.307969,False,[]
+MP530,530 Hauptstraße,52.481322,13.347563,False,[]
+MP533,533 Hermannstraße,52.465687,13.432207,False,[]
+mc114,114 Charlottenburg- Wilmersdorf,52.51156,13.291328,False,[]
+MP601,601 Brückenstraße,52.511551,13.416664,False,[]
+MP602,602 Kaiser-Friedrich-Straße,52.508995,13.301758,False,[]
+MP603,603 Leonorenstraße,52.437182,13.344875,False,[]
+MP604,604 Martin-Luther-Straße,52.482213,13.344723,False,[]
+MP605,605 Stromstraße,52.527168,13.343116,False,[]
+MP606,606 Birkenstraße,52.531465,13.34431,False,[]
+MP607,607 Rheinhardtstraße,52.522316,13.378365,False,[]
+MP608,608 Oranienstraße,52.502822,13.413412,False,[]
+MP609,609 Elsenstraße,52.489451,13.454782,False,[]
+MP610,610 Erkstraße,52.481379,13.43916,False,[]
+MP611,611 Friedrichstraße,52.518372,13.388503,False,[]
+MP612,612 Torstraße,52.529468,13.399832,False,[]
+MP613,613 Leipziger Straße,52.509801,13.382363,False,[]
+MP622,622 Mariendorfer Damm,52.447407,13.385297,False,[]
+MP623,623 Saarstraße,52.468345,13.33396,False,[]
+MP624,624 Mehringdamm,52.492189,13.387104,False,[]
+MP625,625 Martin-Luther-Straße,52.498165,13.345856,False,[]
+MP626,626 Spiegelweg,52.508143,13.284462,False,[]
+MP627,627 Danziger Straße,52.540833,13.413163,False,[]
+MP630,630 Schönholzer Straße,52.570254,13.399336,False,[]
+MP631,631 Breite Straße,52.569141,13.402166,False,[]
+MP632,632 Residenzstraße,52.56931,13.361241,False,[]
+MP633,633 Kapweg,52.562183,13.331806,False,[]
+MP634,634 Müllerstraße,52.548852,13.354526,False,[]

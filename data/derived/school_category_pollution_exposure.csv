@@ -1,0 +1,17 @@
+pollutant,school_category,exceeds_who,schools_exposed
+NO2,Primary,False,2
+NO2,Primary,True,50
+NO2,Secondary,False,1
+NO2,Secondary,True,30
+NO2,Special / Other,True,8
+NO2,Vocational,True,4
+PM10,Primary,False,2
+PM10,Primary,True,47
+PM10,Secondary,False,1
+PM10,Secondary,True,29
+PM10,Special / Other,True,7
+PM10,Vocational,True,4
+PM2.5,Primary,True,49
+PM2.5,Secondary,True,30
+PM2.5,Special / Other,True,7
+PM2.5,Vocational,True,4

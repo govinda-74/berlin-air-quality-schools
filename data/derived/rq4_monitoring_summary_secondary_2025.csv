@@ -1,0 +1,12 @@
+category,school_count,pollutant,percentage
+Under-monitored & High Risk,306,NO2,70.83333333333334
+Under-monitored but Low Risk,86,NO2,19.90740740740741
+Covered but High Risk,38,NO2,8.796296296296296
+Covered & Safe,2,NO2,0.4629629629629629
+Under-monitored & High Risk,265,PM10,61.342592592592595
+Covered & Safe,70,PM10,16.203703703703702
+Under-monitored but Low Risk,61,PM10,14.120370370370368
+Covered but High Risk,36,PM10,8.333333333333332
+Under-monitored & High Risk,326,PM2.5,75.46296296296296
+Covered & Safe,68,PM2.5,15.74074074074074
+Covered but High Risk,38,PM2.5,8.796296296296296
