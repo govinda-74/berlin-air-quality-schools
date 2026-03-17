@@ -174,7 +174,7 @@ This stage focuses on acquiring authoritative source data required for the analy
     → Interactive map with 1 km buffers
 [stations_school_1000m_map.html](https://govinda-74.github.io/berlin-air-quality-schools/data/derived/stations_school_1000m_map.html)  
   
-  - Purpose
+  Purpose
    - Why This Is Important
 
      - Which monitoring stations matter most for school exposure?
@@ -207,10 +207,11 @@ This stage focuses on acquiring authoritative source data required for the analy
 
       - Saved in:
 
-         data/derived/figures/
+         data/derived/figures/mean_no2_per_station.png
 
-         mean_no2_per_station.png
          → Bar chart of station-wise NO₂ levels with WHO guideline reference line
+
+      [mean_no2_per_station.png](data/derived/figures/mean_no2_per_station.png)
 
  ## mean_pm10_per_station.py
   This script calculates the long-term average annual PM10 concentration for each air quality monitoring station in Berlin and compares it against the WHO annual air quality guideline.
@@ -235,17 +236,17 @@ This stage focuses on acquiring authoritative source data required for the analy
 
       - Saved in:
 
-        data/derived/
+        data/derived/mean_pm10_per_station.csv
 
-        mean_pm10_per_station.csv
-        → Table containing mean PM10 concentration per station
+         - Table containing mean PM10 concentration per station
 
       - Saved in:
 
-        data/derived/figures/
+        data/derived/figures/mean_pm10_per_station.png
 
-        mean_pm10_per_station.png
-        → Bar chart showing station-wise PM10 levels with WHO reference line
+         -  Bar chart showing station-wise PM10 levels with WHO reference line
+
+    [mean_pm10_per_station.png](data/derived/figures/mean_pm10_per_station.png)
 
  ## mean_pm25_per_station.py
   This script calculates the long-term average annual PM2.5 concentration for each air quality monitoring station in Berlin and compares it to the WHO annual air quality guideline.
@@ -269,17 +270,18 @@ This stage focuses on acquiring authoritative source data required for the analy
 
       - Saved in:
 
-      data/derived/
+      data/derived/mean_pm25_per_station.csv
 
-      mean_pm25_per_station.csv
-      → Table containing mean PM2.5 concentration per station
+       - Table containing mean PM2.5 concentration per station
 
       - Saved in:
 
-      data/derived/figures/
+      data/derived/figures/mean_pm25_per_station.png
 
-      mean_pm25_per_station.png
-      → Bar chart showing station-wise PM2.5 levels with WHO reference line
+       - Bar chart showing station-wise PM2.5 levels with WHO reference line
+    
+    [mean_pm25_per_station.png](data/derived/figures/mean_pm25_per_station.png)
+
  ## exceedance-vs-school_exposure.py
   This script links annual air pollution levels at monitoring stations with school proximity to assess potential exposure relevance. It evaluates whether stations exceeding WHO air quality guidelines are located near a higher number of schools.
 
@@ -324,7 +326,7 @@ This stage focuses on acquiring authoritative source data required for the analy
 
     - data/derived/figures/
 
-    - NO2_vs_school_exposure_WHO_<year>.png
+[NO2_vs_school_exposure_WHO_2025.png](data\derived\figures\NO2_vs_school_exposure_WHO_2025.png)
 
     - PM10_vs_school_exposure_WHO_<year>.png
 
