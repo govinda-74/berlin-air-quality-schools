@@ -71,9 +71,14 @@ This stage focuses on acquiring authoritative source data required for the analy
    Script: scripts/02_data_cleaning/merging_station.py
     
   * Iterates over all raw station-level pollution CSV files
+
   * Extracts station identifiers and names from file names
+
   * Merges all stations into a single, unified dataset
+
     Output: data_clean/pollution_clean_long.csv
+
+  [pollution_clean_long.csv](data_clean/pollution_clean_long.csv)
   
   ## 3. Cleaning School Location Data
    Script: scripts/02_data_cleaning/school_cleaning.py
@@ -84,8 +89,13 @@ This stage focuses on acquiring authoritative source data required for the analy
   * Eliminates duplicate school locations
   * Saves cleaned school data in both spatial and tabular formats
  
-  output: data_clean/berlin_schools_clean.geojson
-          data_clean/berlin_schools_clean.csv
+  output: 
+
+  - data_clean/berlin_schools_clean.geojson
+         
+  - data_clean/berlin_schools_clean.csv
+
+[berlin_schools_clean.geojson](data_clean/berlin_schools_clean.csv)
 
 # 03_processing
  ## 1. final_station.py :
