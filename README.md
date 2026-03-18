@@ -313,15 +313,15 @@ This stage focuses on acquiring authoritative source data required for the analy
 
     - data\derived\figures\NO2_vs_school_exposure_WHO_2025.png
 
-    ![NO2_vs_school_exposure_WHO_2025.png](data\derived\figures\NO2_vs_school_exposure_WHO_2025.png)
+    ![NO2_vs_school_exposure_WHO_2025.png](data/derived/figures/NO2_vs_school_exposure_WHO_2025.png)
 
     - data\derived\figures\PM10_vs_school_exposure_WHO_2025.png
 
-    ![PM10_vs_school_exposure_WHO_2025.png](data\derived\figures\PM10_vs_school_exposure_WHO_2025.png)
+    ![PM10_vs_school_exposure_WHO_2025.png](data/derived/figures/PM10_vs_school_exposure_WHO_2025.png)
 
     - data\derived\figures\PM2.5_vs_school_exposure_WHO_2025.png
 
-    ![PM2.5_vs_school_exposure_WHO_2025.png](data\derived\figures\PM2.5_vs_school_exposure_WHO_2025.png)
+    ![PM2.5_vs_school_exposure_WHO_2025.png](data/derived/figures/PM2.5_vs_school_exposure_WHO_2025.png)
 
  - Purpose
 
@@ -367,15 +367,15 @@ Figures
 
   - data\derived\figures\NO2_exposure_burden_2025.png
 
-  ![NO2_exposure_burden_2025.png](data\derived\figures\NO2_exposure_burden_2025.png)
+  ![NO2_exposure_burden_2025.png](data/derived/figures/NO2_exposure_burden_2025.png)
 
   - data\derived\figures\PM2.5_exposure_burden_2025.png
   
-  ![PM2.5_exposure_burden_2025.png)](data\derived\figures\PM2.5_exposure_burden_2025.png)
+  ![PM2.5_exposure_burden_2025.png)](data/derived/figures/PM2.5_exposure_burden_2025.png)
 
   - data\derived\figures\PM10_vs_school_exposure_WHO_2025.png
 
-  ![PM10_exposure_burden_2025.png](data\derived\figures\PM10_exposure_burden_2025.png)
+  ![PM10_exposure_burden_2025.png](data/derived/figures/PM10_exposure_burden_2025.png)
 
 Interpretation
 
@@ -426,7 +426,7 @@ Interpretation
 
     - data\derived\figures\RQ4_monitoring_adequacy_panel_2025.png
      
-     ![RQ4_monitoring_adequacy_panel_2025.png](data\derived\figures\RQ4_monitoring_adequacy_panel_2025.png)
+     ![RQ4_monitoring_adequacy_panel_2025.png](data/derived/figures/RQ4_monitoring_adequacy_panel_2025.png)
 
  Interpretation Scope
 
@@ -475,11 +475,11 @@ Evaluates monitoring coverage and pollution risk separately for Primary and Seco
 
      - data\derived\figures\RQ4_monitoring_adequacy_panel_primary_2025.png
 
-     ![RQ4_monitoring_adequacy_panel_primary_2025.png](data\derived\figures\RQ4_monitoring_adequacy_panel_primary_2025.png)
+     ![RQ4_monitoring_adequacy_panel_primary_2025.png](data/derived/figures/RQ4_monitoring_adequacy_panel_primary_2025.png)
 
      - data\derived\figures\RQ4_monitoring_adequacy_panel_secondary_2025.png
 
-     ![RQ4_monitoring_adequacy_panel_primary_2025.png](data\derived\figures\RQ4_monitoring_adequacy_panel_primary_2025.png)
+     ![RQ4_monitoring_adequacy_panel_primary_2025.png](data/derived/figures/RQ4_monitoring_adequacy_panel_primary_2025.png)
 
 ## rq5_school_category_exposure.py
   Analyzes how different school categories (Primary, Secondary, Vocational, Special/Other) are exposed to air pollution (NO₂, PM10, PM2.5) within a 1 km buffer of monitoring stations.
@@ -508,7 +508,7 @@ Evaluates monitoring coverage and pollution risk separately for Primary and Seco
    - Figure:
      - data\derived\figures\school_category_exposure_panel_2025.png)
 
-     ![school_category_exposure_panel_2025.png](data\derived\figures\school_category_exposure_panel_2025.png)
+     ![school_category_exposure_panel_2025.png](data/derived/figures/school_category_exposure_panel_2025.png)
 
 ## seasonal_school_exposure_comparison.py
   Compares winter vs summer pollution and exposure for schools near monitoring stations, including NO₂, PM10, PM2.5, and O₃.
@@ -536,4 +536,4 @@ Evaluates monitoring coverage and pollution risk separately for Primary and Seco
 
       - data\derived\figures\seasonal_exposure_burden_comparison_panel_with_o3.png
 
-![seasonal_exposure_burden_comparison_panel_with_o3.png](data\derived\figures\seasonal_exposure_burden_comparison_panel_with_o3.png)
+![seasonal_exposure_burden_comparison_panel_with_o3.png](data/derived/figures/seasonal_exposure_burden_comparison_panel_with_o3.png)
