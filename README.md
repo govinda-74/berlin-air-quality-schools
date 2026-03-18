@@ -375,7 +375,7 @@ Figures
 
   - data\derived\figures\PM10_vs_school_exposure_WHO_2025.png
 
-  ![PM10_vs_school_exposure_WHO_2025.png](data\derived\figures\PM10_vs_school_exposure_WHO_2025.png)
+  ![PM10_exposure_burden_2025.png](data\derived\figures\PM10_exposure_burden_2025.png)
 
 Interpretation
 
@@ -536,4 +536,4 @@ Evaluates monitoring coverage and pollution risk separately for Primary and Seco
 
       - data\derived\figures\seasonal_exposure_burden_comparison_panel_with_o3.png
 
-      ![seasonal_exposure_burden_comparison_panel_with_o3.png](data\derived\figures\seasonal_exposure_burden_comparison_panel_with_o3.png)
+![seasonal_exposure_burden_comparison_panel_with_o3.png](data\derived\figures\seasonal_exposure_burden_comparison_panel_with_o3.png)
