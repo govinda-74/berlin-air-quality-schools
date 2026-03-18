@@ -1,18 +1,3 @@
-# Data Sources
-1) **Berlin School Locations — “Schulen Berlin” (ESRI DE content)**  
-   - Portal: <https://opendata-esridech.hub.arcgis.com/maps/esri-de-content::schulen-berlin-1/about>  
-
-2) **Air-Quality Monitoring Stations — BLUME (berlin.de)**  
-   - Stations list API: <https://luftdaten.berlin.de/api/stations>  
-
-3) **Air-Quality Time Series (1-year daily)** — BLUME CSV export (berlin.de)  
-   - Portal: <https://luftdaten.berlin.de/>  
-   - Method: CSV export per pollutant with `timespan=custom`, `start[date]/start[hour]`, `end[date]/end[hour]`, `period=24h`  
-   - Example pattern (NO₂ daily):
-     ```
-     https://luftdaten.berlin.de/core/no2.csv?timespan=custom&
-       start[date]=2024-12-01&start[hour]=00&
-
 # Data Sources and collection
 ## 01_data_collection
 
@@ -168,11 +153,11 @@ This stage focuses on acquiring authoritative source data required for the analy
 
     - data/derived/schools_per_station_1000m.png
     → Bar chart of schools per station
-[schools_per_station_1000m.png](data/derived/schools_per_station_1000m.png)
+![schools_per_station_1000m.png](data/derived/schools_per_station_1000m.png)
     
     - data/derived/stations_school_1000m_map.html
     → Interactive map with 1 km buffers
-[stations_school_1000m_map.html](https://govinda-74.github.io/berlin-air-quality-schools/data/derived/stations_school_1000m_map.html)  
+![stations_school_1000m_map.html](https://govinda-74.github.io/berlin-air-quality-schools/data/derived/stations_school_1000m_map.html)  
   
   Purpose
    - Why This Is Important
@@ -211,7 +196,7 @@ This stage focuses on acquiring authoritative source data required for the analy
 
          → Bar chart of station-wise NO₂ levels with WHO guideline reference line
 
-      [mean_no2_per_station.png](data/derived/figures/mean_no2_per_station.png)
+      ![mean_no2_per_station.png](data/derived/figures/mean_no2_per_station.png)
 
  ## mean_pm10_per_station.py
   This script calculates the long-term average annual PM10 concentration for each air quality monitoring station in Berlin and compares it against the WHO annual air quality guideline.
@@ -246,7 +231,7 @@ This stage focuses on acquiring authoritative source data required for the analy
 
          -  Bar chart showing station-wise PM10 levels with WHO reference line
 
-    [mean_pm10_per_station.png](data/derived/figures/mean_pm10_per_station.png)
+    ![mean_pm10_per_station.png](data/derived/figures/mean_pm10_per_station.png)
 
  ## mean_pm25_per_station.py
   This script calculates the long-term average annual PM2.5 concentration for each air quality monitoring station in Berlin and compares it to the WHO annual air quality guideline.
@@ -280,7 +265,7 @@ This stage focuses on acquiring authoritative source data required for the analy
 
        - Bar chart showing station-wise PM2.5 levels with WHO reference line
     
-    [mean_pm25_per_station.png](data/derived/figures/mean_pm25_per_station.png)
+    ![mean_pm25_per_station.png](data/derived/figures/mean_pm25_per_station.png)
 
  ## exceedance-vs-school_exposure.py
   This script links annual air pollution levels at monitoring stations with school proximity to assess potential exposure relevance. It evaluates whether stations exceeding WHO air quality guidelines are located near a higher number of schools.
@@ -324,13 +309,17 @@ This stage focuses on acquiring authoritative source data required for the analy
 
     - Saved in:
 
-    - data/derived/figures/
+    - data\derived\figures\NO2_vs_school_exposure_WHO_2025.png
 
-[NO2_vs_school_exposure_WHO_2025.png](data\derived\figures\NO2_vs_school_exposure_WHO_2025.png)
+    ![NO2_vs_school_exposure_WHO_2025.png](data\derived\figures\NO2_vs_school_exposure_WHO_2025.png)
 
-    - PM10_vs_school_exposure_WHO_<year>.png
+    - data\derived\figures\PM10_vs_school_exposure_WHO_2025.png
 
-    - PM2.5_vs_school_exposure_WHO_<year>.png
+    ![PM10_vs_school_exposure_WHO_2025.png](data\derived\figures\PM10_vs_school_exposure_WHO_2025.png)
+
+    - data\derived\figures\PM2.5_vs_school_exposure_WHO_2025.png
+
+    ![PM2.5_vs_school_exposure_WHO_2025.png](data\derived\figures\PM2.5_vs_school_exposure_WHO_2025.png)
 
  - Purpose
 
@@ -372,10 +361,20 @@ Outputs
    - data/derived/PM2.5_exposure_burden_<year>.csv
 
 Figures
- - data/derived/figures/<pollutant>_exposure_burden_<year>.png
  - Bar charts ranking stations by exposure burden.
 
- 
+  - data\derived\figures\NO2_exposure_burden_2025.png
+
+  ![NO2_exposure_burden_2025.png](data\derived\figures\NO2_exposure_burden_2025.png)
+
+  - data\derived\figures\PM2.5_exposure_burden_2025.png
+  
+  ![PM2.5_exposure_burden_2025.png)](data\derived\figures\PM2.5_exposure_burden_2025.png)
+
+  - data\derived\figures\PM10_vs_school_exposure_WHO_2025.png
+
+  ![PM10_vs_school_exposure_WHO_2025.png](data\derived\figures\PM10_vs_school_exposure_WHO_2025.png)
+
 Interpretation
 
  A high Exposure Burden Index indicates:
@@ -423,13 +422,9 @@ Interpretation
 
   - The script generates:
 
-   - 3-panel publication-style figure
-
-   - Separate pollutant plots with WHO guideline lines
-
-   - Exposure summary tables
-
-   - Monitoring adequacy classification results
+    - data\derived\figures\RQ4_monitoring_adequacy_panel_2025.png
+     
+     ![RQ4_monitoring_adequacy_panel_2025.png](data\derived\figures\RQ4_monitoring_adequacy_panel_2025.png)
 
  Interpretation Scope
 
@@ -470,16 +465,20 @@ Evaluates monitoring coverage and pollution risk separately for Primary and Seco
  Outputs:
    - Tables:
 
-     - rq4_monitoring_summary_primary_<year>.csv
+     - rq4_monitoring_summary_primary_2025.csv
 
-     - rq4_monitoring_summary_secondary_<year>.csv
+     - rq4_monitoring_summary_secondary_2025.csv
 
    - Figures:
 
-     - RQ4_monitoring_adequacy_panel_primary_<year>.png
+     - data\derived\figures\RQ4_monitoring_adequacy_panel_primary_2025.png
 
-     - RQ4_monitoring_adequacy_panel_secondary_<year>.png
- 
+     ![RQ4_monitoring_adequacy_panel_primary_2025.png](data\derived\figures\RQ4_monitoring_adequacy_panel_primary_2025.png)
+
+     - data\derived\figures\RQ4_monitoring_adequacy_panel_secondary_2025.png
+
+     ![RQ4_monitoring_adequacy_panel_primary_2025.png](data\derived\figures\RQ4_monitoring_adequacy_panel_primary_2025.png)
+
 ## rq5_school_category_exposure.py
   Analyzes how different school categories (Primary, Secondary, Vocational, Special/Other) are exposed to air pollution (NO₂, PM10, PM2.5) within a 1 km buffer of monitoring stations.
 
@@ -502,11 +501,12 @@ Evaluates monitoring coverage and pollution risk separately for Primary and Seco
 
    - Table:
 
-     - school_category_pollution_exposure.csv
+     - data\derived\school_category_pollution_exposure.csv
 
    - Figure:
+     - data\derived\figures\school_category_exposure_panel_2025.png)
 
-     - school_category_exposure_panel_<year>.png
+     ![school_category_exposure_panel_2025.png](data\derived\figures\school_category_exposure_panel_2025.png)
 
 ## seasonal_school_exposure_comparison.py
   Compares winter vs summer pollution and exposure for schools near monitoring stations, including NO₂, PM10, PM2.5, and O₃.
@@ -532,6 +532,6 @@ Evaluates monitoring coverage and pollution risk separately for Primary and Seco
 
    Figures:
 
-     - seasonal_pollution_comparison_panel_with_o3.png
+      - data\derived\figures\seasonal_exposure_burden_comparison_panel_with_o3.png
 
-     - seasonal_exposure_burden_comparison_panel_with_o3.png
+      ![seasonal_exposure_burden_comparison_panel_with_o3.png](data\derived\figures\seasonal_exposure_burden_comparison_panel_with_o3.png)
