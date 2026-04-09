@@ -5,14 +5,13 @@ import pandas as pd
 import geopandas as gpd
 import folium
 
-# --------------------------------------------------
+
 # CONFIG
-# --------------------------------------------------
+
 BUFFER_M = 1000  # 1 km buffer
 
-# --------------------------------------------------
 # PATH SETUP
-# --------------------------------------------------
+
 ROOT = Path(__file__).resolve().parents[2]  # BERLIN/
 
 DATA_RAW     = ROOT / "data" / "raw"

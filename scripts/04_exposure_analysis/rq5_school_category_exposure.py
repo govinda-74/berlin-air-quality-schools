@@ -3,9 +3,9 @@ import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
-# --------------------------------------------------
+
 # PATH SETUP
-# --------------------------------------------------
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -24,17 +24,17 @@ POLLUTION_FILE = DATA_CLEAN / "station_yearly_pollution.csv"
 
 BUFFER_M = 1000
 
-# --------------------------------------------------
+
 # LOAD DATA
-# --------------------------------------------------
+
 
 schools = gpd.read_file(SCHOOLS_FILE)
 stations = gpd.read_file(STATIONS_FILE)
 pollution = pd.read_csv(POLLUTION_FILE)
 
-# --------------------------------------------------
+
 # SCHOOL CATEGORY CLASSIFICATION
-# --------------------------------------------------
+
 
 def classify_school(row):
 
@@ -55,23 +55,19 @@ def classify_school(row):
 
 schools["school_category"] = schools.apply(classify_school, axis=1)
 
-# --------------------------------------------------
+
 # CRS PROJECTION
-# --------------------------------------------------
 
 schools_m = schools.to_crs(25833)
 stations_m = stations.to_crs(25833)
 
-# --------------------------------------------------
 # BUFFER AROUND STATIONS
-# --------------------------------------------------
 
 stations_buffer = stations_m.copy()
 stations_buffer["geometry"] = stations_buffer.buffer(BUFFER_M)
 
-# --------------------------------------------------
+
 # SPATIAL JOIN
-# --------------------------------------------------
 
 hits = gpd.sjoin(
     schools_m,
@@ -80,9 +76,8 @@ hits = gpd.sjoin(
     how="inner"
 )
 
-# --------------------------------------------------
+
 # STANDARDISE POLLUTANT NAMES
-# --------------------------------------------------
 
 pollutant_map = {
     "Feinstaub (PM2,5)": "PM2.5",
@@ -103,13 +98,11 @@ WHO_LIMITS = {
 latest_year = pollution["year"].max()
 pollution = pollution[pollution["year"] == latest_year]
 
-# --------------------------------------------------
-# MERGE POLLUTION WITH STATIONS
-# --------------------------------------------------
 
-# --------------------------------------------------
+# MERGE POLLUTION WITH STATIONS
+
+
 # STANDARDISE station_id TYPE
-# --------------------------------------------------
 
 hits["station_id"] = (
     hits["station_id"]
@@ -131,9 +124,9 @@ df = hits.merge(
     how="left"
 )
 
-# --------------------------------------------------
+
 # KEEP TARGET POLLUTANTS
-# --------------------------------------------------
+
 
 df = df[df["pollutant"].isin(WHO_LIMITS.keys())]
 
@@ -141,9 +134,9 @@ df = df[df["pollutant"].isin(WHO_LIMITS.keys())]
 df["who_limit"] = df["pollutant"].map(WHO_LIMITS)
 df["exceeds_who"] = df["mean_value"] > df["who_limit"]
 
-# --------------------------------------------------
+
 # EXPOSURE SUMMARY
-# --------------------------------------------------
+
 
 summary = (
     df.groupby(["pollutant","school_category","exceeds_who"])
@@ -156,9 +149,9 @@ summary.to_csv(OUT_CSV, index=False)
 
 print("Saved summary:", OUT_CSV)
 
-# --------------------------------------------------
+
 # 3-PANEL VISUALISATION
-# --------------------------------------------------
+
 
 pollutants = ["PM2.5", "PM10", "NO2"]
 

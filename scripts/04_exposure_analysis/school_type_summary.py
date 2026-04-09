@@ -2,9 +2,9 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# --------------------------------------------------
+
 # PATH SETUP
-# --------------------------------------------------
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -15,16 +15,15 @@ FIG_DIR = DATA_DERIVED / "figures"
 DATA_DERIVED.mkdir(parents=True, exist_ok=True)
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
-# --------------------------------------------------
+
 # LOAD DATA
-# --------------------------------------------------
+
 
 SCHOOLS_FILE = DATA_CLEAN / "berlin_schools_clean.csv"
 schools = pd.read_csv(SCHOOLS_FILE)
 
-# --------------------------------------------------
+
 # COUNT BY schulart
-# --------------------------------------------------
 
 schulart_count = (
     schools["schulart"]
@@ -41,9 +40,9 @@ schulart_count.to_csv(OUT_CSV, index=False)
 print("School counts by schulart:")
 print(schulart_count)
 
-# --------------------------------------------------
+
 # VISUALISATION
-# --------------------------------------------------
+
 
 plt.figure(figsize=(10,6))
 plt.barh(schulart_count["school_type"], schulart_count["count"])

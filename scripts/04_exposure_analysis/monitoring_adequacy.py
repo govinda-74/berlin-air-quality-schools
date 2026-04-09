@@ -26,23 +26,23 @@ FIG_DIR      = DATA_DERIVED / "figures"
 DATA_DERIVED.mkdir(parents=True, exist_ok=True)
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
-# --------------------------------------------------
+
 # FILE PATHS
-# --------------------------------------------------
+
 SCHOOLS_FP   = DATA_CLEAN / "berlin_schools_clean.geojson"
 STATIONS_FP  = DATA_RAW / "stations" / "blume_stations_active.geojson"
 POLLUTION_FP = DATA_CLEAN / "station_yearly_pollution.csv"
 
-# --------------------------------------------------
+
 # LOAD DATA
-# --------------------------------------------------
+
 schools  = gpd.read_file(SCHOOLS_FP).to_crs(25833)
 stations = gpd.read_file(STATIONS_FP).to_crs(25833)
 pollution = pd.read_csv(POLLUTION_FP)
 
-# --------------------------------------------------
+
 # NEAREST STATION DISTANCE
-# --------------------------------------------------
+
 nearest = gpd.sjoin_nearest(
     schools,
     stations,
@@ -50,9 +50,9 @@ nearest = gpd.sjoin_nearest(
     distance_col="distance_m"
 )
 
-# --------------------------------------------------
+
 # STANDARDISE POLLUTANT NAMES
-# --------------------------------------------------
+
 pollutant_map = {
     "Feinstaub (PM2,5)": "PM2.5",
     "Feinstaub (PM2.5)": "PM2.5",
@@ -87,9 +87,9 @@ pollution_wide = pollution.pivot_table(
 
 nearest = nearest.merge(pollution_wide, on="station_id", how="left")
 
-# --------------------------------------------------
+
 # CLASSIFICATION
-# --------------------------------------------------
+
 THRESHOLD = 1000  # 1 km
 
 summary_results = []
@@ -126,9 +126,9 @@ for pol in TARGETS:
     summary_results.append(counts)
 
 
-# --------------------------------------------------
+
 # SAVE SUMMARY TABLE
-# --------------------------------------------------
+
 final_summary = pd.concat(summary_results, ignore_index=True)
 
 OUT_CSV = DATA_DERIVED / "rq4_monitoring_summary.csv"
@@ -137,9 +137,8 @@ final_summary.to_csv(OUT_CSV, index=False)
 print("Summary table saved:", OUT_CSV)
 print(final_summary)
 
-# --------------------------------------------------
+
 # 3-PANEL PUBLICATION-STYLE FIGURE
-# --------------------------------------------------
 
 import matplotlib.pyplot as plt
 

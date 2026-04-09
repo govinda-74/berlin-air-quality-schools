@@ -5,9 +5,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-# --------------------------------------------------
-# ROOT DETECTION
-# --------------------------------------------------
+
 THIS_FILE = Path(__file__).resolve()
 ROOT = None
 for p in THIS_FILE.parents:
@@ -26,9 +24,8 @@ FIG_DIR      = DATA_DERIVED / "figures"
 DATA_DERIVED.mkdir(parents=True, exist_ok=True)
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
-# --------------------------------------------------
-# FILE PATHS
-# --------------------------------------------------
+
+# FILE path
 SCHOOLS_FP   = DATA_CLEAN / "berlin_schools_clean.geojson"
 STATIONS_FP  = DATA_RAW / "stations" / "blume_stations_active.geojson"
 POLLUTION_FP = DATA_CLEAN / "station_yearly_pollution.csv"
@@ -40,9 +37,9 @@ schools  = gpd.read_file(SCHOOLS_FP).to_crs(25833)
 stations = gpd.read_file(STATIONS_FP).to_crs(25833)
 pollution = pd.read_csv(POLLUTION_FP)
 
-# --------------------------------------------------
+
 # CLASSIFY SCHOOL TYPES
-# --------------------------------------------------
+
 def classify_school_type(x):
     x = str(x)
 
@@ -58,9 +55,8 @@ schools["school_group"] = schools["schultyp"].apply(classify_school_type)
 # Keep only Primary + Secondary
 schools = schools[schools["school_group"].isin(["Primary", "Secondary"])].copy()
 
-# --------------------------------------------------
+
 # NEAREST STATION DISTANCE
-# --------------------------------------------------
 nearest = gpd.sjoin_nearest(
     schools,
     stations,
@@ -68,9 +64,9 @@ nearest = gpd.sjoin_nearest(
     distance_col="distance_m"
 )
 
-# --------------------------------------------------
+
 # STANDARDISE POLLUTANT NAMES
-# --------------------------------------------------
+
 pollutant_map = {
     "Feinstaub (PM2,5)": "PM2.5",
     "Feinstaub (PM2.5)": "PM2.5",
@@ -105,9 +101,9 @@ pollution_wide = pollution.pivot_table(
 
 nearest = nearest.merge(pollution_wide, on="station_id", how="left")
 
-# --------------------------------------------------
+
 # CLASSIFICATION SETTINGS
-# --------------------------------------------------
+
 THRESHOLD = 1000  # 1 km
 
 order = [
@@ -124,9 +120,9 @@ colors = {
     "Under-monitored & High Risk": "#D32F2F"
 }
 
-# --------------------------------------------------
+
 # RUN FOR PRIMARY AND SECONDARY SEPARATELY
-# --------------------------------------------------
+
 for school_group in ["Primary", "Secondary"]:
 
     nearest_group = nearest[nearest["school_group"] == school_group].copy()
@@ -172,9 +168,9 @@ for school_group in ["Primary", "Secondary"]:
     print(f"Summary table saved for {school_group}:", out_csv)
     print(final_summary)
 
-    # --------------------------------------------------
+    
     # 3-PANEL FIGURE
-    # --------------------------------------------------
+    
     fig, axes = plt.subplots(1, 3, figsize=(18, 6), sharey=True)
 
     for ax, pol in zip(axes, TARGETS):

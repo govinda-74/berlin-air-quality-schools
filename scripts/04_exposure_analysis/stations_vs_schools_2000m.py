@@ -5,14 +5,12 @@ import pandas as pd
 import geopandas as gpd
 import folium
 
-# --------------------------------------------------
-# CONFIG
-# --------------------------------------------------
+
 BUFFER_M = 2000  # 2 km buffer
 
-# --------------------------------------------------
+
 # PATH SETUP
-# --------------------------------------------------
+
 ROOT = Path(__file__).resolve().parents[2]  # BERLIN/
 
 DATA_RAW     = ROOT / "data" / "raw"
@@ -27,15 +25,15 @@ OUT_CSV     = DATA_DERIVED / "stations_school_2000m_counts.csv"
 OUT_GEOJSON = DATA_DERIVED / "stations_school_2000m.geojson"
 OUT_HTML    = DATA_DERIVED / "stations_school_2000m_map.html"
 
-# --------------------------------------------------
+
 # LOAD DATA
-# --------------------------------------------------
+
 schools  = gpd.read_file(SCHOOLS_FP)
 stations = gpd.read_file(STATIONS_FP)
 
-# --------------------------------------------------
+
 # PICK IDENTIFIERS
-# ------------------------------------------------
+
 def pick(cols, candidates):
     for c in candidates:
         if c in cols:
@@ -48,21 +46,21 @@ school_nm = pick(schools.columns, ["schulname", "school_name", "name", "Schulnam
 st_id = pick(stations.columns, ["station_id", "code", "id"])
 st_nm = pick(stations.columns, ["station_name", "name"])
 
-# --------------------------------------------------
+
 # PROJECT TO METERS
-# --------------------------------------------------
+
 schools_m  = schools.to_crs(25833)
 stations_m = stations.to_crs(25833)
 
-# --------------------------------------------------
+
 # BUILD 1 km BUFFERS AROUND STATIONS
-# --------------------------------------------------
+
 stations_buf = stations_m[[st_id, st_nm, "geometry"]].copy()
 stations_buf["geometry"] = stations_buf.buffer(BUFFER_M)
 
-# --------------------------------------------------
+
 # SPATIAL JOIN: SCHOOLS WITHIN STATION BUFFERS
-# --------------------------------------------------
+
 hits = gpd.sjoin(
     schools_m[[school_id, school_nm, "geometry"]],
     stations_buf,
@@ -70,9 +68,9 @@ hits = gpd.sjoin(
     how="left"
 )
 
-# --------------------------------------------------
+
 # AGGREGATE SCHOOL COUNTS
-# --------------------------------------------------
+
 counts = (
     hits.dropna(subset=[st_id])
         .groupby(st_id)
@@ -89,9 +87,9 @@ stations_with["school_ids"] = stations_with["school_ids"].apply(
     lambda v: v if isinstance(v, list) else []
 )
 
-# --------------------------------------------------
+
 # VISUALISATION: NUMBER OF SCHOOLS PER STATION (2 km)
-# --------------------------------------------------
+
 
 plot_df = (
     stations_with[[st_nm, "school_count"]]
@@ -114,9 +112,9 @@ print("Bar chart saved to:", FIG_PATH)
 
 
 
-# --------------------------------------------------
+
 # SAVE OUTPUTS
-# --------------------------------------------------
+
 stations_with.drop(columns="geometry").to_csv(OUT_CSV, index=False)
 
 stations_geo = stations_with.to_crs(4326)
@@ -125,9 +123,9 @@ stations_geo.to_file(OUT_GEOJSON, driver="GeoJSON")
 print(f"Stations with ≥2 school in {BUFFER_M} m:",
       (stations_geo["school_count"] > 0).sum(), "/", len(stations_geo))
 
-# --------------------------------------------------
+
 # INTERACTIVE MAP
-# --------------------------------------------------
+
 def color_for(n):
     if n == 0: return "#9e9e9e"
     if n <= 2: return "#2e7d32"
